@@ -34,7 +34,6 @@ export const signup = async (req, res, next) => {
 };
 
 export const signin = async (req, res, next) => {
-  console.log(isAdmin);
   const { email, password } = req.body;
 
   if (!email || !password || email === "" || password === "") {
@@ -55,7 +54,7 @@ export const signin = async (req, res, next) => {
     }
 
     const token = jwt.sign({ id: validUser._id, isAdmin: validUser.isAdmin }, process.env.JWT_SECRET);
-console.log(isAdmin);
+
     const { password: pass, ...rest } = validUser._doc;
 
     res
