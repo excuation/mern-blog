@@ -57,7 +57,12 @@ const Header = () => {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar  position="static"
+        sx={{
+          backgroundColor: theme === "light" ? "#1E3A8A" : "#0F172A", // Dark blue shades
+          color: "#FFFFFF", // White text for contrast
+        }}
+      >
             <Toolbar>
                 <Typography variant="h6" component={Link} to="/" sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit' }}>
                     Programmer Blog
